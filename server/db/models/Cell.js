@@ -2,7 +2,7 @@ const Sequelize = require("sequelize");
 const db = require("../db");
 
 const Cell = db.define("cell", {
-  name: {
+  cell: {
     type: Sequelize.STRING,
     allowNull: false,
     validate: {
@@ -23,6 +23,9 @@ const Cell = db.define("cell", {
       notEmpty: true,
     },
   },
+  trait: {
+    type: Sequelize.TEXT,
+  },
   locatedIn: {
     type: Sequelize.STRING,
     allowNull: false,
@@ -31,11 +34,20 @@ const Cell = db.define("cell", {
     },
   },
   category: {
-    type: Sequelize.ENUM('stem', 'bone', 'blood', 'muscle', 'fat', 'skin', 'nerve', 'endothelial', 'gamete', 'pancreatic', 'cancer')
+    type: Sequelize.ENUM(
+      "stem",
+      "bone",
+      "blood",
+      "muscle",
+      "fat",
+      "skin",
+      "nerve",
+      "endothelial",
+      "gamete",
+      "pancreatic",
+      "cancer"
+    ),
   },
-  // trait: {
-  //   type: Sequelize.TEXT,
-  // },
   // components: {
   //   type: Sequelize.TEXT,
   // },

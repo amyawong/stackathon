@@ -2,7 +2,7 @@ const db = require('./db');
 
 // Imported db [category] models
 const Cell = require('./models/Cell');
-const MuscleCell = require('./models/MuscleCell');
+const CellCategory = require('./models/CellCategory');
 const Organ = require('./models/Organ');
 const Organelle = require('./models/Organelle');
 const OrganSystem = require('./models/OrganSystem');
@@ -11,7 +11,7 @@ module.exports = {
   db,
   models: {
     Cell,
-    MuscleCell,
+    CellCategory,
     Organ,
     Organelle,
     OrganSystem,
@@ -33,5 +33,5 @@ Cell.belongsTo(Organ)
 Organelle.belongsToMany(Cell, { through: 'cell_instance'}) // same organelles can be found in different cells
 Cell.belongsToMany(Organelle, { through: 'cell_instance'})
 
-Cell.hasOne(MuscleCell) // muscle cells are a type of cell
-MuscleCell.belongsTo(Cell) 
+Cell.hasOne(CellCategory) // muscle cells are a type of cell
+CellCategory.belongsTo(Cell) 

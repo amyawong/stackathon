@@ -2,7 +2,7 @@ const Sequelize = require("sequelize");
 const db = require("../db");
 
 const OrganSystem = db.define("organSystem", {
-  name: {
+  system: {
     type: Sequelize.STRING,
     allowNull: false,
     validate: {
