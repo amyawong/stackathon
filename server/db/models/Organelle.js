@@ -26,3 +26,5 @@ const Organelle = db.define("organelle", {
 });
 
 module.exports = Organelle;
+
+// asssociated conditions

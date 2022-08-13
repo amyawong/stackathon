@@ -23,6 +23,15 @@ const Organ = db.define("organ", {
       notEmpty: true,
     },
   },
+  // location: {
+  //   type: Sequelize.ENUM('internal', 'external')
+  // },
 });
 
 module.exports = Organ;
+
+// associated conditions/diseases
+
+// organ -> part -> sub-parts & purposes
+// heart -> blood vessels -> capillaries, arteries, veins (significance, diameter)
+// kidney -> lobes -> filtration, reabsorption, secretion

@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 const db = require("../db");
 
-const OrganSystem = db.define("cartItem", {
+const OrganSystem = db.define("organSystem", {
   name: {
     type: Sequelize.STRING,
     allowNull: false,
@@ -23,9 +23,18 @@ const OrganSystem = db.define("cartItem", {
       notEmpty: true,
     },
   },
-  // category: {
-  //   type: Sequelize.ENUM('respiratory', 'digestive and excretory', 'circulatory', 'urinary', 'integumentary', 'skeletal', 'muscular', 'endocrine', 'lymphatic', 'nervous', 'reproductive')
+  organsInvolved: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    validate: {
+      notEmpty: true,
+    },
+  },
+  // associatedConditions: {
+  //   type: Sequelize.STRING,
   // },
 });
 
 module.exports = OrganSystem;
+
+// digestive, respiratory, lymphatic, cardiovascular, urinary, endocrine (85)
