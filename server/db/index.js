@@ -30,8 +30,8 @@ Organ.belongsTo(OrganSystem)
 Organ.hasMany(Cell) // Lung has cilia, goblet, basal, brush, neuroendocrine cells
 Cell.belongsTo(Organ)
 
-Organelle.belongsToMany(Cell, { through: 'cell_instance'}) // same organelles can be found in different cells
-Cell.belongsToMany(Organelle, { through: 'cell_instance'})
+Organelle.belongsToMany(Cell, { through: 'cell_instance' }) // same organelles can be found in different cells
+Cell.belongsToMany(Organelle, { through: 'cell_instance' })
 
 Cell.hasOne(CellCategory) // muscle cells are a type of cell
 CellCategory.belongsTo(Cell) 
