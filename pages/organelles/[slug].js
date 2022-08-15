@@ -1,5 +1,6 @@
 import React from "react";
 import Router from "next/router";
+import Link from "next/link"
 
 function Organelle(props) {
   const { organelle } = props;
@@ -12,6 +13,7 @@ function Organelle(props) {
 
   return (
     <section className="individual">
+      {/* <p><Link href="/organelles">Organelles</Link> > <strong>{organelle.organelle}</strong></p> */}
       <h1>Organelles</h1>
       <div className="i-info">
         <h3 className="i-name">{organelle.organelle}</h3>

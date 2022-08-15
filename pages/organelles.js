@@ -6,6 +6,7 @@ import Router, { useRouter } from "next/router";
 function Organelles({ organelles }) {
   return (
     <section>
+      {/* <p>Home > <strong>Organelles</strong></p> */}
       <h1>Organelles</h1>
       <div className="all-view">
         {organelles.map((organelle) => (
