@@ -9,8 +9,11 @@ const CellCategory = db.define("cellCategory", {
       notEmpty: true,
     },
   },
+  image: {
+    type: Sequelize.TEXT,
+  },
   examples: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false,
     validate: {
       notEmpty: true,

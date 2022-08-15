@@ -52,17 +52,20 @@ const seed = async () => {
       {
         id: 1,
         category: "muscle",
+        image: "https://static.sciencelearn.org.nz/images/images/000/002/357/embed/Types-of-muscle-tissue20161111-16640-1c2x74o.jpg?1522307930",
         examples: "smooth, cardiac, skeletal",
       },
       {
         id: 2,
         category: "bone",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiXciylsnof97k4Yvqn318JUpoCSnVafVd-tDjBRMtq9tUb-_jNOAPN5-yleKaGm-JhU8&usqp=CAU",
         examples: "osteoblasts, osteoclasts, osteocyte",
       },
       {
         id: 3,
         category: "blood",
-        examples: "hemoglobin, white blood cells",
+        image: "https://www.ncbi.nlm.nih.gov/books/NBK65951/bin/CDR0000503952.jpg",
+        examples: "monocyte, lymphocyte, neutrophil",
       },
     ]);
 
@@ -79,7 +82,7 @@ const seed = async () => {
         id: 2,
         organ: "pancreas",
         image:
-          "https://images.medicinenet.com/images/image_collection/webmd_anatomy/liver-anatomy.jpg",
+          "https://pathology.jhu.edu/build/assets/pancreas/_image600/pancreas-location-illustration.jpg",
         purpose:
           "produces and secretes pancretic juice to digest food in the small intestine and secretes insulin and glucagon to regulate blood glucose levels",
       },
@@ -109,16 +112,14 @@ const seed = async () => {
         id: 1,
         organelle: "ribosomes",
         image:
-          "https://cdn.britannica.com/79/117279-050-3AE0F00F/membrane-system-Endoplasmic-reticulum-cells-biosynthesis-transport.jpg?w=400&h=300&c=crop",
-        description: "carry out protein synthesis and translation",
+          "https://cdn.kastatic.org/googleusercontent/Hz4CmMjGQXUEmzQ8ORzSm1ya0PhTtDzBGAg1AUbSiu1TMxQFZgZ4HsoEU97aiz5sSo5MAq4CHLOzTAAK0wNg64oQ",
+        description: "found on rough endoplasmic reticulum and are responsible for processing and transporting proteins and the synthesis of lipids",
       },
       {
         id: 2,
         organelle: "endoplasmic recticulum",
-        image:
-          "https://c8.alamy.com/comp/BB46TC/the-endoplasmic-reticulum-plays-an-important-role-in-the-biosynthesis-BB46TC.jpg",
-        description:
-          "found on ribosomes and are responsible for processing and transporting proteins and the synthesis of lipids",
+        image: "https://d2jx2rerrg6sh3.cloudfront.net/image-handler/picture/2016/6/Endoplasmic_reticulum_shutterstock_289251920.jpg",
+        description: "produces proteins"
       },
       {
         id: 3,

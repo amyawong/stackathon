@@ -3,33 +3,29 @@ import React, { useEffect } from "react";
 import Link from "next/link";
 import Router, { useRouter } from "next/router";
 
-function OrganSystems({ systems }) {
-  // const { systems } = props;
-  // console.log('{ systems }: \n', systems);
+function Organs({ organs }) {
   // const router = useRouter();
 
   return (
     <section>
-      <h1>Organ Systems</h1>
+      <h1>Organs</h1>
       <div className="all-view">
-        {systems.map((system) => (
-          <div className="all-view-section" key={system.id}>
-            <Link href="/organ-systems/[slug]">
+        {organs.map((organ) => (
+          <div className="all-view-section" key={organ.id}>
+            <Link href="/organs/[slug]">
               <div className="all-view-grid">
                 <div className="imgBx">
                   <img
                     className="all-view-image"
-                    src={system.image}
-                    alt={`Image of ${system.system}`}
+                    src={organ.image}
+                    alt={`Image of ${organ.organ}`}
                   />
                 </div>
                 <div className="nameBx">
-                  <p className="all-view-name">{system.system}</p>
+                  <p className="all-view-name">{organ.organ}</p>
                 </div>
               </div>
             </Link>
-            <hr />
-            <br /><br /><br /><br /><br />
           </div>
         ))}
       </div>
@@ -38,13 +34,13 @@ function OrganSystems({ systems }) {
 }
 
 export async function getServerSideProps() {
-  const req = await fetch(`http://localhost:3000/api/organ-systems`);
+  const req = await fetch(`http://localhost:3000/api/organs`);
   const data = await req.json();
   return {
     props: {
-      systems: data,
+      organs: data,
     },
   };
 }
 
-export default OrganSystems;
+export default Organs;

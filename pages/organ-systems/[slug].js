@@ -33,7 +33,7 @@ function OrganSystem(props) {
 }
 
 // export async function getServerSideProps({ query }) {
-//   const req = await fetch(`http://localhost:3000/organ-systems/${query.slug}`);
+//   const req = await fetch(`http://localhost:3000/api/organ-systems/${query.slug}`);
 //   const data = await req.json();
 
 //   return {
