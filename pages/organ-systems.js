@@ -14,13 +14,16 @@ function OrganSystems({ systems }) {
       <div className="all-view">
         {systems.map((system) => (
           <div className="all-view-section" key={system.id}>
-            <Link href="/organ-systems/[slug]">
+            <Link href={{
+              pathname: "/organ-systems/[slug]", 
+              query: { slug: system.system },
+            }}>
               <div className="all-view-grid">
                 <div className="imgBx">
                   <img
                     className="all-view-image"
                     src={system.image}
-                    alt={`Image of ${system.system}`}
+                    alt={`Image of the ${system.system}`}
                   />
                 </div>
                 <div className="nameBx">

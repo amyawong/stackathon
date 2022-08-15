@@ -11,7 +11,10 @@ function Cells({ cells }) {
       <div className="all-view">
         {cells.map((cell) => (
           <div className="all-view-section" key={cell.id}>
-            <Link href="/cells/[slug]">
+            <Link href={{
+                pathname: "/cells/[slug]",
+                query: { slug: cell.cell }
+            }}>
               <div className="all-view-grid">
                 <div className="imgBx">
                   <img

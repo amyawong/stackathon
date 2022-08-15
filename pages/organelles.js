@@ -11,7 +11,10 @@ function Organelles({ organelles }) {
       <div className="all-view">
         {organelles.map((organelle) => (
           <div className="all-view-section" key={organelle.id}>
-            <Link href="/organelles/[slug]">
+            <Link href={{
+                pathname: "/organelles/[slug]",
+                query: { slug: organelle.organelle }
+            }}>
               <div className="all-view-grid">
                 <div className="imgBx">
                   <img

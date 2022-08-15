@@ -11,13 +11,16 @@ function Categories({ categories }) {
       <div className="all-view">
         {categories.map((category) => (
           <div className="all-view-section" key={category.id}>
-            <Link href="/categories/[slug]">
+            <Link href={{
+              pathname: "/categories/[slug]",
+              query: { slug: category.category },
+            }}>
               <div className="all-view-grid">
                 <div className="imgBx">
                   <img
                     className="all-view-image"
                     src={category.image}
-                    alt={`Image of ${category.category}`}
+                    alt={`Picture of ${category.category} cells`}
                   />
                 </div>
                 <div className="nameBx">
