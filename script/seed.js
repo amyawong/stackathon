@@ -149,7 +149,7 @@ const seed = async () => {
       },
       {
         id: 3,
-        system: "cardiovascular system",
+        system: "cardiovascular",
         image:
           "https://www.thoughtco.com/thmb/_sJelWZ2fsE_-KTo_vGg_s4pfdQ=/2239x1259/smart/filters:no_upscale()/GettyImages-97537745-59efa47d6f53ba0011c0070b.jpg",
         purpose:

@@ -3,8 +3,8 @@ import React, { useEffect } from 'react';
 import Link from 'next/link';
 import Router, { useRouter } from 'next/router';
 
-function OrganSystems(props) {
-  const { systems } = props;
+function OrganSystems({ systems }) {
+  // const { systems } = props;
   // console.log('{ systems }: \n', systems);
   // const router = useRouter();
 
@@ -27,12 +27,12 @@ function OrganSystems(props) {
   )
 }
 
-export async function getServerSideProps() {
-  return {
-    props: {
-      systems,
-    }
-  }
-}
+// export async function getServerSideProps() {
+//   return {
+//     props: {
+//       systems,
+//     }
+//   }
+// }
 
 export default OrganSystems
