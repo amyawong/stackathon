@@ -158,7 +158,7 @@ const seed = async () => {
       },
       {
         id: 4,
-        system: 'nervous system',
+        system: 'nervous',
         image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/TE-Nervous_system_diagram.svg/1200px-TE-Nervous_system_diagram.svg.png',
         purpose: 'coordination',
         organsInvolved: 'brain and spinal cord',
