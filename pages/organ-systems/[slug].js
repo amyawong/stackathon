@@ -32,16 +32,16 @@ function OrganSystem(props) {
   );
 }
 
-// export async function getServerSideProps({ query }) {
-//   const req = await fetch(`http://localhost:3000/api/organ-systems/${query.slug}`);
-//   const data = await req.json();
+export async function getServerSideProps({ query }) {
+  const req = await fetch(`http://localhost:3000/api/organ-systems/${query.slug}`);
+  const data = await req.json();
 
-//   return {
-//     props: {
-//       system: data
-//     }
-//   }
-// }
+  return {
+    props: {
+      system: data
+    }
+  }
+}
 
 // export async function getServerSideProps({ params }) {
 //   const req = await fetch(`http://localhost:3000/${params.id}.json`);
