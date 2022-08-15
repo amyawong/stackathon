@@ -1,4 +1,3 @@
-// landing page for /organ-systems
 import React, { useEffect } from "react";
 import Link from "next/link";
 import Router, { useRouter } from "next/router";
@@ -12,7 +11,7 @@ function Categories({ categories }) {
         {categories.map((category) => (
           <div className="all-view-section" key={category.id}>
             <Link href={{
-              pathname: "/categories/[slug]",
+              pathname: "/cell-categories/[slug]",
               query: { slug: category.category },
             }}>
               <div className="all-view-grid">

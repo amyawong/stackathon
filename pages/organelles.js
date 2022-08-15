@@ -4,17 +4,18 @@ import Link from "next/link";
 import Router, { useRouter } from "next/router";
 
 function Organelles({ organelles }) {
-
   return (
     <section>
       <h1>Organelles</h1>
       <div className="all-view">
         {organelles.map((organelle) => (
           <div className="all-view-section" key={organelle.id}>
-            <Link href={{
+            <Link
+              href={{
                 pathname: "/organelles/[slug]",
-                query: { slug: organelle.organelle }
-            }}>
+                query: { slug: organelle.organelle },
+              }}
+            >
               <div className="all-view-grid">
                 <div className="imgBx">
                   <img
@@ -29,7 +30,11 @@ function Organelles({ organelles }) {
               </div>
             </Link>
             <hr />
-            <br /><br /><br /><br /><br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
           </div>
         ))}
       </div>
@@ -42,7 +47,7 @@ export async function getServerSideProps() {
   const data = await req.json();
   return {
     props: {
-        organelles: data,
+      organelles: data,
     },
   };
 }

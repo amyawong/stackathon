@@ -1,6 +1,5 @@
 // dynamic route for /organ-systems/:slug (i.e. /organ-systems/respiratory || /organ-systems/circulatory)
 
-// landing page for /organ-systems
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Router, { useRouter } from "next/router";
@@ -17,16 +16,16 @@ function OrganSystem(props) {
   }
 
   return (
-    <section className="i-organ-system">
+    <section className="individual">
       <h1>Organ Systems</h1>
-      <div className="i-organ-system-info">
-        <h3 className="i-organ-system-name">{system.system}</h3>
-        <img className="i-organ-system-image" src={system.image} alt={`Image of ${system.system}`} />
-        <p className="i-organ-system-purpose">{system.purpose}</p>
-        <p className="i-organ-system-organs">{system.organsInvolved}</p>
+      <div className="i-info">
+        <h3 className="i-name">{system.system}</h3>
+        <img className="i-image" src={system.image} alt={`Image of ${system.system}`} />
+        <p className="i-details">Functions: {system.purpose}</p>
+        <p className="i-details">Organs in System: {system.organsInvolved}</p>
       </div>
       <div>
-        <button className="i-organ-system-button" onClick={viewAllSystemsClick}>View All Organ Systems</button>
+        <button className="i-button" onClick={viewAllSystemsClick}>View All Organ Systems</button>
       </div>
     </section>
   );
@@ -42,13 +41,5 @@ export async function getServerSideProps({ query }) {
     }
   }
 }
-
-// export async function getServerSideProps({ params }) {
-//   const req = await fetch(`http://localhost:3000/${params.id}.json`);
-//   const data = await req.json();
-//   return {
-//     props: { car: data },
-//   };
-// }
 
 export default OrganSystem;

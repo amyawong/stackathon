@@ -1,32 +1,32 @@
 import React from "react";
 import Router from "next/router";
 
-function Organ(props) {
-  const { organ } = props;
+function Cell(props) {
+  const { cell } = props;
 
   async function viewAllSystemsClick(e) {
     await Router.push({
-      pathname: "/organs",
+      pathname: "/cells",
     });
   }
 
   return (
     <section className="individual">
-      <h1>Organs</h1>
+      <h1>Cells</h1>
       <div className="i-info">
-        <h3 className="i-name">{organ.organ}</h3>
+        <h3 className="i-name">{cell.cell}</h3>
         <img
           className="i-image"
-          src={organ.image}
-          alt={`Image of ${organ.organ}`}
+          src={cell.image}
+          alt={`Image of ${cell.cell}`}
         />
-        <p className="i-details">
-          Function: {organ.purpose}
-        </p>
+        <p className="i-details">Function: {cell.purpose}</p>
+        <p className="i-details">Can be found in: {cell.locatedIn}</p>
+        <p className="i-details">Category: {cell.category}</p>
       </div>
       <div>
         <button className="i-button" onClick={viewAllSystemsClick}>
-          View All Organs
+          View All Cells
         </button>
       </div>
     </section>
@@ -34,16 +34,14 @@ function Organ(props) {
 }
 
 export async function getServerSideProps({ query }) {
-  const req = await fetch(
-    `http://localhost:3000/api/organs/${query.slug}`
-  );
+  const req = await fetch(`http://localhost:3000/api/cells/${query.slug}`);
   const data = await req.json();
 
   return {
     props: {
-      organ: data,
+      cell: data,
     },
   };
 }
 
-export default Organ;
+export default Cell;

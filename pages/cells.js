@@ -1,20 +1,20 @@
-// landing page for /organ-systems
 import React, { useEffect } from "react";
 import Link from "next/link";
 import Router, { useRouter } from "next/router";
 
 function Cells({ cells }) {
-
   return (
     <section>
       <h1>Cells in The Body</h1>
       <div className="all-view">
         {cells.map((cell) => (
           <div className="all-view-section" key={cell.id}>
-            <Link href={{
+            <Link
+              href={{
                 pathname: "/cells/[slug]",
-                query: { slug: cell.cell }
-            }}>
+                query: { slug: cell.cell },
+              }}
+            >
               <div className="all-view-grid">
                 <div className="imgBx">
                   <img
@@ -29,7 +29,11 @@ function Cells({ cells }) {
               </div>
             </Link>
             <hr />
-            <br /><br /><br /><br /><br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
           </div>
         ))}
       </div>
@@ -42,7 +46,7 @@ export async function getServerSideProps() {
   const data = await req.json();
   return {
     props: {
-        cells: data,
+      cells: data,
     },
   };
 }

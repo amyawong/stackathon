@@ -1,32 +1,30 @@
 import React from "react";
 import Router from "next/router";
 
-function Organ(props) {
-  const { organ } = props;
+function Organelle(props) {
+  const { organelle } = props;
 
   async function viewAllSystemsClick(e) {
     await Router.push({
-      pathname: "/organs",
+      pathname: "/organelles",
     });
   }
 
   return (
     <section className="individual">
-      <h1>Organs</h1>
+      <h1>Organelles</h1>
       <div className="i-info">
-        <h3 className="i-name">{organ.organ}</h3>
+        <h3 className="i-name">{organelle.organelle}</h3>
         <img
           className="i-image"
-          src={organ.image}
-          alt={`Image of ${organ.organ}`}
+          src={organelle.image}
+          alt={`Image of ${organelle.organelle}`}
         />
-        <p className="i-details">
-          Function: {organ.purpose}
-        </p>
+        <p className="i-details">Function: {organelle.description}</p>
       </div>
       <div>
         <button className="i-button" onClick={viewAllSystemsClick}>
-          View All Organs
+          View All Organelles
         </button>
       </div>
     </section>
@@ -34,16 +32,14 @@ function Organ(props) {
 }
 
 export async function getServerSideProps({ query }) {
-  const req = await fetch(
-    `http://localhost:3000/api/organs/${query.slug}`
-  );
+  const req = await fetch(`http://localhost:3000/api/organelles/${query.slug}`);
   const data = await req.json();
 
   return {
     props: {
-      organ: data,
+      organelle: data,
     },
   };
 }
 
-export default Organ;
+export default Organelle;

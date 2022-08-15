@@ -23,9 +23,9 @@ const Cell = db.define("cell", {
       notEmpty: true,
     },
   },
-  trait: {
-    type: Sequelize.TEXT,
-  },
+  // trait: {
+  //   type: Sequelize.TEXT,
+  // },
   locatedIn: {
     type: Sequelize.STRING,
     allowNull: false,

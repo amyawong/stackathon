@@ -12,7 +12,10 @@ function Organs({ organs }) {
       <div className="all-view">
         {organs.map((organ) => (
           <div className="all-view-section" key={organ.id}>
-            <Link href="/organs/[slug]">
+            <Link href={{
+              pathname: "/organs/[slug]",
+              query: { slug: organ.organ },
+            }}>
               <div className="all-view-grid">
                 <div className="imgBx">
                   <img
@@ -26,6 +29,8 @@ function Organs({ organs }) {
                 </div>
               </div>
             </Link>
+            <hr />
+            <br /><br /><br /><br /><br />
           </div>
         ))}
       </div>
