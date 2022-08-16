@@ -15,7 +15,7 @@ export default function Home() {
         <h1 className={styles.title}>Human Body Facts</h1>
 
         <p className={styles.description}>
-          Explore the marvels of the human body with Next.js and Sequelize
+          Explore the marvels of the human body with React, Next.js and Sequelize
         </p>
 
         <Image
