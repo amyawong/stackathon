@@ -24,3 +24,13 @@ a {
     background: black;
   }
 }
+
+.all-view-image {
+  width: 600px;
+  height: inherit;
+}
+
+.i-image {
+  width: 450px;
+  height: inherit;
+}
