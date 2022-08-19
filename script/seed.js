@@ -19,16 +19,86 @@ const seed = async () => {
       },
       {
         id: 2,
-        organelle: "endoplasmic recticulum",
+        organelle: "rough endoplasmic recticulum",
         image: "https://d2jx2rerrg6sh3.cloudfront.net/image-handler/picture/2016/6/Endoplasmic_reticulum_shutterstock_289251920.jpg",
-        description: "produces proteins"
+        description: "studded with ribosomes and forms transport vescicles going to Golgi apparatus"
       },
       {
         id: 3,
+        organelle: "smooth endoplasmic reticulum",
+        image:
+          "https://d2jx2rerrg6sh3.cloudfront.net/image-handler/picture/2016/6/Endoplasmic_reticulum_shutterstock_289251920.jpg",
+        description: "continuous with rough endoplasmic reticulum and is responsible for the synthesis of lipids (e.g. phospholipids and steroids)",
+      },
+      {
+        id: 4,
         organelle: "lysosomes",
         image:
           "https://biologyease.com/wp-content/uploads/2020/07/Structure-of-Lysosomes.jpg",
-        description: "vescicles that digest molecules or portions of a cell",
+        description: "vescicles that digest molecules or old cell parts",
+      },
+      {
+        id: 5,
+        organelle: "nucleus",
+        image:
+          "https://www.coolaboo.com/wp-content/uploads/2018/12/Nucleus.jpg",
+        description: "command center of the cell that houses chromatin and DNA",
+      },
+      {
+        id: 6,
+        organelle: "nucleolus",
+        image:
+          "https://cdn1.byjus.com/wp-content/uploads/2019/04/Nucleolus.png",
+        description: "region where ribosomal RNA (rRNA) is made",
+      },
+      {
+        id: 7,
+        organelle: "nuclear envelope",
+        image:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Diagram_human_cell_nucleus.svg/1200px-Diagram_human_cell_nucleus.svg.png",
+        description: "double membrane containing pores that control what goes into and leaves the nucleus",
+      },
+      {
+        id: 8,
+        organelle: "golgi apparatus",
+        image:
+          "https://www.news-medical.net/image.axd?picture=2016%2F6%2FGolgi_body_shutterstock_300259154.jpg",
+        description: "a stack of flattened saccules that serve as a transfer station that receives vescicles from the endoplasmic reticulum and modifies molecules within the vescicles and proceeds to repackage for new destination",
+      },
+      {
+        id: 9,
+        organelle: "vacuoles",
+        image:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Biological_cell_vacuole.svg/300px-Biological_cell_vacuole.svg.png",
+        description: "membranous sacs that rid a cell of excess water",
+      },
+      {
+        id: 10,
+        organelle: "mitochondria",
+        image:
+          "https://s3-us-west-1.amazonaws.com/contentlab.studiod/8/8/8d7a9e0ce84547eca9033313423de7f1.png",
+        description: "powerhouse of teh cell - breaks down carbohydrates to produce ATP and is site of cellular respiration",
+      },
+      {
+        id: 11,
+        organelle: "peroxisome",
+        image:
+          "https://i.ytimg.com/vi/jiAZ12RYclY/maxresdefault.jpg",
+        description: "small vescicles that break down toxic materials in the cell and oxidative enzymes",
+      },
+      {
+        id: 12,
+        organelle: "centrosome",
+        image:
+          "https://www.genome.gov/sites/default/files/tg/en/illustration/centriole.jpg",
+        description: "serves as the main microtubule organizing center and a regulator of cell-cycle progression",
+      },
+      {
+        id: 13,
+        organelle: "centriole",
+        image:
+          "http://www.guyhowto.com/wp-content/uploads/2020/12/87_4-Centrioles-Functions.jpg",
+        description: "organizes microtubules that serve as the cell's skeletal system and determine the locations of the nucleus and other organelles within the cell",
       },
     ]);
 
@@ -68,7 +138,39 @@ const seed = async () => {
         purpose: 'a type of white blood cell that protects the body from infection',
         locatedIn: ' produced in the bone marrow and released into the bloodstream to travel to wherever they are needed',
         category: 'blood',
-      }
+      },
+      // {
+      //   id: 5,
+      //   cell: "",
+      //   image: "",
+      //   purpose: "",
+      //   locatedIn: "",
+      //   category: "",
+      // },
+      // {
+      //   id: 6,
+      //   cell: "",
+      //   image: "",
+      //   purpose: "",
+      //   locatedIn: "",
+      //   category: "",
+      // },
+      // {
+      //   id: 7,
+      //   cell: "",
+      //   image: "",
+      //   purpose: "",
+      //   locatedIn: "",
+      //   category: "",
+      // },
+      // {
+      //   id: ,
+      //   cell: "",
+      //   image: "",
+      //   purpose: "",
+      //   locatedIn: "",
+      //   category: "",
+      // },
     ]);
 
     await CellCategory.bulkCreate([
@@ -176,6 +278,42 @@ const seed = async () => {
         image: 'https://img.freepik.com/premium-vector/human-lung-anatomy-diagram-illness-respiratory-cancer-graphics_124894-214.jpg?w=2000',
         purpose: 'brings oxygen into body and removes carbon dioxide'
       },
+      // {
+      //   id: 6,
+      //   organ: "",
+      //   image: "",
+      //   purpose: "",
+      // },
+      // {
+      //   id: 7,
+      //   organ: "",
+      //   image: "",
+      //   purpose: "",
+      // },
+      // {
+      //   id: 8,
+      //   organ: "",
+      //   image: "",
+      //   purpose: "",
+      // },
+      // {
+      //   id: 9,
+      //   organ: "",
+      //   image: "",
+      //   purpose: "",
+      // },
+      // {
+      //   id: 10,
+      //   organ: "",
+      //   image: "",
+      //   purpose: "",
+      // },
+      // {
+      //   id: ,
+      //   organ: "",
+      //   image: "",
+      //   purpose: "",
+      // },
     ]);
 
     await OrganSystem.bulkCreate([
@@ -261,8 +399,18 @@ const seed = async () => {
     ]);
 
     const ribosomes = await Organelle.findByPk(1);
-    const endoplasmicReticulum = await Organelle.findByPk(2);
-    const lysosomes = await Organelle.findByPk(3);
+    const roughER = await Organelle.findByPk(2);
+    const smoothER = await Organelle.findByPk(3);
+    const lysosomes = await Organelle.findByPk(4);
+    const nucleus = await Organelle.findByPk(5);
+    const nucleolus = await Organelle.findByPk(6);
+    const nuclearEnvelope = await Organelle.findByPk(7);
+    const golgiApparatus = await Organelle.findByPk(8);
+    const vacuoles = await Organelle.findByPk(9);
+    const mitochondria = await Organelle.findByPk(10);
+    const peroxisome = await Organelle.findByPk(11);
+    const centrosome = await Organelle.findByPk(12);
+    const centriole = await Organelle.findByPk(13);
 
     const motorNeuron = await Cell.findByPk(1);
     const adipocyte = await Cell.findByPk(2);
@@ -299,10 +447,10 @@ const seed = async () => {
     const urinary = await OrganSystem.findByPk(10);
     const endocrine = await OrganSystem.findByPk(11);
 
-    await motorNeuron.setOrganelles([ribosomes, endoplasmicReticulum, lysosomes]);
-    await adipocyte.setOrganelles([ribosomes, endoplasmicReticulum, lysosomes]);
-    await osteocyte.setOrganelles([ribosomes, endoplasmicReticulum, lysosomes]);
-    await neutrophil.setOrganelles([ribosomes, endoplasmicReticulum, lysosomes]);
+    await motorNeuron.setOrganelles([ribosomes, smoothER, roughER, lysosomes, nucleus, nucleolus, nuclearEnvelope, golgiApparatus, vacuoles, mitochondria, peroxisome, centrosome, centriole]);
+    await adipocyte.setOrganelles([ribosomes, smoothER, roughER, lysosomes, nucleus, nucleolus, nuclearEnvelope, golgiApparatus, vacuoles, mitochondria, peroxisome, centrosome, centriole]);
+    await osteocyte.setOrganelles([ribosomes, smoothER, roughER, lysosomes, nucleus, nucleolus, nuclearEnvelope, golgiApparatus, vacuoles, mitochondria, peroxisome, centrosome, centriole]);
+    await neutrophil.setOrganelles([ribosomes, smoothER, roughER, lysosomes, nucleus, nucleolus, nuclearEnvelope, golgiApparatus, vacuoles, mitochondria, peroxisome, centrosome, centriole]);
 
     await bone.setCell(osteocyte);
     await blood.setCell(neutrophil);
